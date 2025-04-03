@@ -2,19 +2,19 @@
 services:
   node-exporter:
     image: quay.io/prometheus/node-exporter
-    container_name: core-node-exporter-c
+    container_name: monitor-node-exporter-c
     command:
       - "--path.rootfs=/host"
     pid: host
     volumes:
       - "/:/host,rslave"
     networks:
-      - network-core
+      - network-monitor
     restart: always
     # ports:
     #   - 9100:9100
 
 ####################################### Networks
 networks:
-  network-core:
+  network-monitor:
     external: true
