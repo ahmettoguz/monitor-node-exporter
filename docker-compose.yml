@@ -4,10 +4,14 @@ services:
     image: prom/node-exporter
     container_name: monitor-node-exporter-c
     command:
-      - "--path.rootfs=/host"
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
     pid: host
     volumes:
-      - "/:/host,rslave"
+      - /proc:/host/proc
+      - /sys:/host/sys
+      - /:/rootfs
     networks:
       - network-monitor
     restart: always
