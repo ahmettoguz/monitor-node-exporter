@@ -1,7 +1,7 @@
 ####################################### Services
 services:
   node-exporter:
-    image: quay.io/prometheus/node-exporter
+    image: prom/node-exporter
     container_name: monitor-node-exporter-c
     command:
       - "--path.rootfs=/host"
