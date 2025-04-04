@@ -22,7 +22,7 @@
 
 <h2 id="intro">📌 About Project</h2>
 
-Node Exporter introduced by Prometheus is a tool for monitoring hardware and OS metrics. This projectprovides an easy way to deploy Node Exporter along with the necessary configurations for integrating with Prometheus and Grafana for seamless system monitoring.
+Node Exporter introduced by Prometheus is a tool for monitoring hardware and OS metrics. This project provides an easy way to deploy Node Exporter along with the necessary configurations for integrating with Prometheus and Grafana for seamless system monitoring.
 
 <br/>
 
@@ -45,7 +45,7 @@ Node Exporter introduced by Prometheus is a tool for monitoring hardware and OS 
 <h2 id="features">🔥 Features</h2>
 
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
-- **Network Setup:** Integrates Node-Exporter with other metric tools with other networks.
+- **Network Setup:** Integrates Node-Exporter with other metric tool networks.
 
 <br/>
 
@@ -68,6 +68,7 @@ cd monitor
 
 ```
 git clone https://github.com/ahmettoguz/monitor-node-exporter
+cd monitor-node-exporter
 ```
 
 - Create `network-monitor` network if not exists.
