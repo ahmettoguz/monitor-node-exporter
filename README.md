@@ -51,6 +51,8 @@ Node Exporter introduced by Prometheus is a tool for monitoring hardware and OS 
 
 <h2 id="releases">🚢 Releases</h2>
 
+&nbsp; [![.](https://img.shields.io/badge/1.1.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-node-exporter/tree/v1.1.0)
+
 &nbsp; [![.](https://img.shields.io/badge/1.0.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-node-exporter/tree/v1.0.0)
 
 <br/>
