@@ -18,7 +18,7 @@
 <h2 id="features">🔥 Features</h2>
 
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
-- **Network Setup:** Integrates Node-Exporter with other metric tools with other networks.
+- **Network Setup:** Integrates Node-Exporter with other metric tool networks.
 
 <br/>
 
@@ -35,6 +35,7 @@ cd monitor
 
 ```
 git clone https://github.com/ahmettoguz/monitor-node-exporter
+cd monitor-node-exporter
 ```
 
 - Create `network-monitor` network if not exists.
