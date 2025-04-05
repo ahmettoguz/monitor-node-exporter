@@ -9,9 +9,9 @@ services:
       - "--path.sysfs=/host/sys"
     pid: host
     volumes:
-      - /proc:/host/proc
-      - /sys:/host/sys
-      - /:/rootfs
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
     networks:
       - network-monitor
     restart: always
