@@ -1,16 +1,15 @@
 ####################################### Services
 services:
-  node-exporter:
-    image: prom/node-exporter
-    container_name: monitor-node-exporter-c
+  service-node-exporter:
+    image: ahmettoguz/node-exporter:v1.9.1
+    container_name: container-node-exporter
     command:
       - "--path.rootfs=/rootfs"
-    pid: host
     volumes:
       - /:/rootfs:ro
     networks:
       - network-monitor
-    restart: always
+    restart: ${RESTART_POLICY}
     # ports:
     #   - 9100:9100
 

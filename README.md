@@ -1,4 +1,4 @@
-<h1 id="top" align="center">Monitor Node-Exporter <br/> 🚢 v1.1.0 🚢</h1>
+<h1 id="top" align="center">Monitor Node-Exporter <br/> 🚢 v1.2.0 🚢</h1>
 
 <br>
 
@@ -19,6 +19,7 @@
 
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Network Setup:** Integrates Node-Exporter with other metric tool networks.
+- **.env Configuration:** All environment variables are easily configurable using the `.env` file, simplifying configuration management.
 
 <br/>
 
@@ -38,20 +39,25 @@ git clone https://github.com/ahmettoguz/monitor-node-exporter
 cd monitor-node-exporter
 ```
 
+- Create `.env` file based on the `.env.example` file with credentails and configurations.
+
+```
+cp .env.example .env
+```
+
 - Create `network-monitor` network if not exists.
 
 ```
 docker network create network-monitor
 ```
 
-- Run container.
+- Manage container.
 
 ```
-docker stop                              monitor-node-exporter-c
-docker rm                                monitor-node-exporter-c
-docker compose -p monitor up --build -d  node-exporter
-docker compose -p monitor up -d          node-exporter
-docker logs -f                           monitor-node-exporter-c
+docker stop                     container-node-exporter
+docker rm                       container-node-exporter
+docker compose -p monitor up -d service-node-exporter
+docker logs -f                  container-node-exporter
 ```
 
 - Refer to [`cAdvisor`](https://github.com/ahmettoguz/monitor-cadvisor) repository to expose contianer metrics.
@@ -62,7 +68,7 @@ docker logs -f                           monitor-node-exporter-c
 
 - Refer to [`Loki`](https://github.com/ahmettoguz/monitor-loki) repository to scrap traefik access logs from promtail.
 
-- Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
+- Refer to [`Traefik`](https://github.com/ahmettoguz/proxy-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
 
 - Refer to [`Grafana`](https://github.com/ahmettoguz/monitor-grafana) repository to integrate grafana to visualize logs and metrics.
 
