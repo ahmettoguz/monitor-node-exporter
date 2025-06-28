@@ -40,16 +40,21 @@ Node Exporter introduced by Prometheus is a tool for monitoring hardware and OS 
 
 &nbsp; [![Node Exporter](https://img.shields.io/badge/node_exporter-000000?style=for-the-badge&logo=prometheus&labelColor=000000)](https://prometheus.io/docs/guides/node-exporter)
 
+&nbsp; [![.Env](https://img.shields.io/badge/.ENV-ECD53F.svg?style=for-the-badge&logo=dotenv&logoColor=black)](https://www.ibm.com/docs/bg/aix/7.2?topic=files-env-file)
+
 <br/>
 
 <h2 id="features">🔥 Features</h2>
 
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Network Setup:** Integrates Node-Exporter with other metric tool networks.
+- **.env Configuration:** All environment variables are easily configurable using the `.env` file, simplifying configuration management.
 
 <br/>
 
 <h2 id="releases">🚢 Releases</h2>
+
+&nbsp; [![.](https://img.shields.io/badge/1.2.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-node-exporter/tree/v1.2.0)
 
 &nbsp; [![.](https://img.shields.io/badge/1.1.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-node-exporter/tree/v1.1.0)
 
@@ -73,20 +78,25 @@ git clone https://github.com/ahmettoguz/monitor-node-exporter
 cd monitor-node-exporter
 ```
 
+- Create `.env` file based on the `.env.example` file with credentails and configurations.
+
+```
+cp .env.example .env
+```
+
 - Create `network-monitor` network if not exists.
 
 ```
 docker network create network-monitor
 ```
 
-- Run container.
+- Manage container.
 
 ```
-docker stop                              monitor-node-exporter-c
-docker rm                                monitor-node-exporter-c
-docker compose -p monitor up --build -d  node-exporter
-docker compose -p monitor up -d          node-exporter
-docker logs -f                           monitor-node-exporter-c
+docker stop                     container-node-exporter
+docker rm                       container-node-exporter
+docker compose -p monitor up -d service-node-exporter
+docker logs -f                  container-node-exporter
 ```
 
 - Refer to [`cAdvisor`](https://github.com/ahmettoguz/monitor-cadvisor) repository to expose contianer metrics.
@@ -97,7 +107,7 @@ docker logs -f                           monitor-node-exporter-c
 
 - Refer to [`Loki`](https://github.com/ahmettoguz/monitor-loki) repository to scrap traefik access logs from promtail.
 
-- Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
+- Refer to [`Traefik`](https://github.com/ahmettoguz/proxy-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
 
 - Refer to [`Grafana`](https://github.com/ahmettoguz/monitor-grafana) repository to integrate grafana to visualize logs and metrics.
 
