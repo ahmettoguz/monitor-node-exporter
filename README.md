@@ -39,10 +39,17 @@ git clone https://github.com/ahmettoguz/monitor-node-exporter
 cd monitor-node-exporter
 ```
 
-- Create `.env` file based on the `.env.example` file with credentails and configurations.
+- Switch version.
+
+```
+git checkout v1.2.1
+```
+
+- Create `.env` file based on the `.env.example` file and configure it appropriately.
 
 ```
 cp .env.example .env
+nano .env
 ```
 
 - Create `network-monitor` network if not exists.
